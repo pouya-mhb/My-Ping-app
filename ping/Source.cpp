@@ -11,22 +11,22 @@ int main()
 	char site[512];
 	cout << "WebSite : "; // enter the site
 	cin.getline(site, 512);  // get you site
-	ofstream mhb;
+	ofstream file;
 	
-	mhb.open("d:\mb.bat"); // create and open the file
-	mhb << "@echo off\n"; //from line 15 to 19 writing commands to yr file
-	mhb << "cd / \n";
-	mhb << "ping ";
-	mhb << site;
-	mhb << " -t";
-	mhb << "ping.exe > d:\mb8.txt";
+	file.open("d:\pingApp.bat"); // create and open the file
+	file << "@echo off\n"; // writing commands to your file
+	file << "cd / \n";
+	file << "ping ";
+	file << site;
+	file << " -t";
+	file << "pingApp.exe > d:\pingLogs.txt";
 
-	mhb.open("	d:\mb7.txt");
+	file.open("	d:\pingLogs.txt");
 	
 
-	mhb.close(); // close the fu**ing file
-	system("d:\mb.bat"); // open the goddmn file;
-	system("d:\mb7.txt");
+	file.close(); // close file
+	system("d:\pingApp.bat"); // open file;
+	system("d:\pingLogs.txt");
 
 	
 	cin.get();
